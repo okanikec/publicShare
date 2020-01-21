@@ -3,7 +3,7 @@ require('./db/mongoose')
 const userRouter = require('./routers/users')
 const projectRouter = require('./routers/projects')
 
-const outsourcer = express()
+const lystra = express()
 const port = process.env.PORT
 
 const multer = require('multer')
@@ -27,18 +27,18 @@ const upload = multer({
 //     throw new Error('from my middleware')
 // }
 
-outsourcer.post('/upload', upload.single('upload'), (req, res) =>{
+lystra.post('/upload', upload.single('upload'), (req, res) =>{
     res.send()
 }, (error, req, res, next) => {
     res.status(400).send({error: error.message})
 })
 
-outsourcer.use(express.json()) // parses user data to JSON so it can be accessed by res & req
-outsourcer.use(userRouter)
-outsourcer.use(projectRouter)
+lystra.use(express.json()) // parses user data to JSON so it can be accessed by res & req
+lystra.use(userRouter)
+lystra.use(projectRouter)
 
 
-outsourcer.listen( port, () => {
+lystra.listen( port, () => {
     console.log('Server is up on port ' + port)
 })
 

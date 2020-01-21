@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="/css/styles.css" rel="stylesheet">
+        
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+            {{>loggedheader}}
+            
+            <div id="signup">
+                <form>
+                
+                <label>First Name:</label>
+                <input type="text" name="first" placeholder="First Name"><br />
+                <br/>
+                <label>Last Name: </label>
+                <input type="text" name="last" placeholder="Last Name"><br />
+                <br/>
+                <label> Date of Birth: </label>
+                <input type="date" name="bday"><br/>
+                <br/>
+                <label> Email: </label>
+                <input type="text" name="email" placeholder="Email"><br />
+                <br/>
+                <label> Country: </label>
+                <select id="kuntry" style="margin-right:0px; width:350px;">
+                    <option value="--Select a Country--">--Select a Country--</option>
+                </select>    
+                <br/>
+                <br/>
+                <label>Create a username:</label>
+                <input type="text" name="first"><br />
+                <br/>
+                <label>Create a password:</label>
+                <input type="text" name="first"><br />
+                <br/>
+                <label>Re-enter password:</label>
+                <input type="text" name="first"><br />
+                <br/>
+                </form>
+            </div>        
+        
+    
+       
+        
+            
+          {{>footer}}   
+        </div>  
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+        <script src="/scripts/script.js"></script>
+    </body>
+</html>
