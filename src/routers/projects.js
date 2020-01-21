@@ -1,9 +1,9 @@
 const express = require('express')
 const Project = require('../models/project')
 const auth = require('../middleware/auth')
-const outsourcer = new express.Router()
+const lystra = new express.Router()
 
-outsourcer.post('/projects', auth, async (req,res) => {
+lystra.post('/projects', auth, async (req,res) => {
     //const project = new Project(req.body)
     const project = new Project({
         ...req.body,
@@ -23,7 +23,7 @@ outsourcer.post('/projects', auth, async (req,res) => {
 //GET /projects?completed=true
 //GET /projectts?limit=10&skip=20
 //GET /tasks?sortBy=createdAt:desc
-outsourcer.get('/projects', auth ,async (req, res) => {
+lystra.get('/projects', auth ,async (req, res) => {
     const match = {}
     const sort = {}
 
@@ -56,7 +56,7 @@ outsourcer.get('/projects', auth ,async (req, res) => {
     }
 })
 
-outsourcer.get('/projects/:id',  auth ,async (req, res) => {
+lystra.get('/projects/:id',  auth ,async (req, res) => {
     const _id = req.params.id
 
     try {
@@ -74,7 +74,7 @@ outsourcer.get('/projects/:id',  auth ,async (req, res) => {
     }
 })
 
-outsourcer.patch('/projects/:id', auth ,async(req, res) =>{
+lystra.patch('/projects/:id', auth ,async(req, res) =>{
     const updates = Object.keys(req.body)
     const allowedUpdates = ['skillRequired', 'projectCost', 'projectLocation', 'duration' ]
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
@@ -102,7 +102,7 @@ outsourcer.patch('/projects/:id', auth ,async(req, res) =>{
     }
 })
 
-outsourcer.delete('/projects/:id', auth ,async (req, res) => {
+lystra.delete('/projects/:id', auth ,async (req, res) => {
     try {
         const project = await Project.findOneAndDelete({_id: req.params.id, client: req.user._id})
 
@@ -116,4 +116,4 @@ outsourcer.delete('/projects/:id', auth ,async (req, res) => {
     }
 })
 
-module.exports = outsourcer
+module.exports = lystra

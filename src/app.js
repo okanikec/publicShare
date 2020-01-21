@@ -11,14 +11,18 @@ const date1 = require('./utils/date1')
 
 const lystra = express()
 const port = process.env.PORT || 3000
+
+//Define paths for Express Config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
+//Setup handlebars engine and views location
 lystra.set('view engine', 'hbs')
 lystra.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
+//Setup static directory to serve
 lystra.use(express.static(publicDirectoryPath))
 
 lystra.get('/', (req, res) => {

@@ -2,11 +2,10 @@ const express = require('express')
 const multer = require('multer')
 const User = require('../models/user')
 const auth = require('../middleware/auth')
-const outsourcer = new express.Router()
+const lystra = new express.Router()
 const  { sendWelcomeEmail, sendCancelationEmail } = require('../emails/account')
 
-
-outsourcer.post('/users', async (req, res) => { // create new user
+lystra.post('/users', async (req, res) => { // create new user
     const user = new User(req.body)
 
     try{
@@ -18,7 +17,7 @@ outsourcer.post('/users', async (req, res) => { // create new user
     }
 })
 
-outsourcer.post('/users/login', async (req, res) => { //login user
+lystra.post('/users/login', async (req, res) => { //login user
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
@@ -32,7 +31,7 @@ outsourcer.post('/users/login', async (req, res) => { //login user
 
 })
 
-outsourcer.post('/users/logout', auth, async (req,res) => {
+lystra.post('/users/logout', auth, async (req,res) => {
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
             return token.token !== req.token
@@ -47,7 +46,7 @@ outsourcer.post('/users/logout', auth, async (req,res) => {
 
 })
 
-outsourcer.post('/users/logoutAll', auth, async (req, res) => {
+lystra.post('/users/logoutAll', auth, async (req, res) => {
     try{
         req.user.tokens = []
         await req.user.save()
@@ -57,13 +56,13 @@ outsourcer.post('/users/logoutAll', auth, async (req, res) => {
     }
 })
 
-outsourcer.get('/users/me', auth , async (req,res) => { //get all users
+lystra.get('/users/me', auth , async (req,res) => { //get all users
    res.send(req.user)
 })
 
 
 
-outsourcer.patch('/users/me', auth ,async (req, res) => {
+lystra.patch('/users/me', auth ,async (req, res) => {
 
     const updates = Object.keys(req.body) //converts object to array
     const allowedUpdates = ['id', 'freelancerfirstname', 'freelancerlastname', 'dob', 'age', 'email', 'password','projectName', 'dateOfAccept', 'projectCost', 'projectStatus', 'duedate', 'completed'] //array
@@ -83,7 +82,7 @@ outsourcer.patch('/users/me', auth ,async (req, res) => {
 })
 
 
-outsourcer.delete('/users/me', auth, async (req, res) => {
+lystra.delete('/users/me', auth, async (req, res) => {
     try {
         await req.user.remove()
         sendCancelationEmail(req.user.email, req.user.freelancerfirstname)
@@ -107,7 +106,7 @@ const upload = multer({
     }
 })
 
-outsourcer.post('/users/me/avatar', auth ,upload.single('avatar') , async (req, res) => {
+lystra.post('/users/me/avatar', auth ,upload.single('avatar') , async (req, res) => {
     req.user.avatar = req.file.buffer
     await req.user.save()
     res.send()
@@ -116,13 +115,13 @@ outsourcer.post('/users/me/avatar', auth ,upload.single('avatar') , async (req, 
 })
 
 
-outsourcer.delete('/users/me/avatar', auth, async (req, res) => {
+lystra.delete('/users/me/avatar', auth, async (req, res) => {
     req.user.avatar = undefined
     await req.user.save()
     res.send()
 })
 
-outsourcer.get('/users/:id/avatar', async (req,res) => {
+lystra.get('/users/:id/avatar', async (req,res) => {
     try {
         const user = await User.findById(req.params.id)
 
@@ -141,4 +140,4 @@ outsourcer.get('/users/:id/avatar', async (req,res) => {
 })
 
 
-module.exports = outsourcer
+module.exports = lystra
