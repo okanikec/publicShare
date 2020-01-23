@@ -1,9 +1,10 @@
-const express = require('express')
-require('./db/mongoose')
-const userRouter = require('./routers/users')
-const projectRouter = require('./routers/projects')
+const lystra = require('./app')
+// const express = require('express')
+// require('./db/mongoose')
+// const userRouter = require('./routers/users')
+// const projectRouter = require('./routers/projects')
 
-const lystra = express()
+//const lystra = express()
 const port = process.env.PORT
 
 const multer = require('multer')
@@ -23,19 +24,11 @@ const upload = multer({
     }
 })
 
-// const errorMiddleware = (req, res, next) => {
-//     throw new Error('from my middleware')
-// }
-
 lystra.post('/upload', upload.single('upload'), (req, res) =>{
     res.send()
 }, (error, req, res, next) => {
     res.status(400).send({error: error.message})
 })
-
-lystra.use(express.json()) // parses user data to JSON so it can be accessed by res & req
-lystra.use(userRouter)
-lystra.use(projectRouter)
 
 
 lystra.listen( port, () => {

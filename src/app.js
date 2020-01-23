@@ -1,8 +1,11 @@
+require('./db/mongoose')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const commodity = require('./utils/commodity')
 const date1 = require('./utils/date1')
+const userRouter = require('./routers/users')
+const projectRouter = require('./routers/projects')
 
 
 
@@ -22,8 +25,12 @@ lystra.set('view engine', 'hbs')
 lystra.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
-//Setup static directory to serve
-lystra.use(express.static(publicDirectoryPath))
+
+lystra.use(express.static(publicDirectoryPath))//Setup static directory to serve
+lystra.use(express.json()) // parses user data to JSON so it can be accessed by res & req
+lystra.use(userRouter)
+lystra.use(projectRouter)
+
 
 lystra.get('/', (req, res) => {
     res.render('index')
@@ -94,10 +101,6 @@ lystra.get('/information', (req, res) => {
     
 })
 
-
-
-
-
 lystra.get('*', (req, res) =>{
     res.render('404', {
         title: '404',
@@ -105,8 +108,8 @@ lystra.get('*', (req, res) =>{
     })
 })
 
-
-
 lystra.listen(port, () => {
     console.log('Server is up and running on port ' + port)
 })
+
+module.exports = app
