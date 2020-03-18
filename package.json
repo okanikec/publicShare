@@ -1,40 +1,29 @@
 {
-  "name": "htmlcss2",
+  "name": "htmlcss",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js -e js,hbs",
-    "connect": "/Users/Ike/MongoDB/Server/4.0/bin/mongod.exe  --dbpath=/Users/Ike/mongodb-data",
-    "dev2": "env-cmd -f ./config/dev.env nodemon src/index.js",
-    "start2": "node src/index.js",
-    "test": "env-cmd  ./config/test.env jest --watch"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "app.js",
   "dependencies": {
-    "@sendgrid/mail": "^6.3.1",
-    "bcryptjs": "^2.4.3",
-    "express": "^4.16.4",
-    "hbs": "^4.0.4",
-    "jsonwebtoken": "^8.5.1",
-    "moment": "^2.24.0",
-    "mongoose": "^5.6.4",
-    "multer": "^1.4.1",
-    "request": "^2.88.0",
-    "validator": "^11.1.0"
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.4",
+    "request": "^2.88.2",
+    "validator": "^10.11.0",
+    "yargs": "^13.2.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "env-cmd": "^10.0.1",
-    "jest": "^25.1.0",
-    "nodemon": "^1.2.0",
-    "supertest": "^4.0.2"
-  }
+    "install": "^0.13.0",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "connect": "/Users/Ike/MongoDB/Server/4.0/bin/mongod.exe  --dbpath=/Users/Ike/mongodb-data",
+    "start": "node app.js",
+    "dev": "nodemon app.js -e js,hbs"
+  },
+  "author": "",
+  "license": "ISC"
 }

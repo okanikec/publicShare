@@ -2,17 +2,14 @@
 
 <html>
     <head>
-        <title> Lystra </title>
-        <link href="/css/styles.css" rel="stylesheet">
-        
-       
-        
+        <title> Index HBS</title>
+        <link href="../styles.css" rel="stylesheet">
+        <script src="../script.js"></script>
     </head>
     <body>
-       
-        
+    {{>indexheader}}    
+    
         <div id="wrapper">
-            {{>header}}
             <div id="list1">   
                 <ul class="lista" style="font-size:20px">
                     <li class="rows"> Blogging </li>
@@ -45,14 +42,27 @@
                     <li> 3D Animation </li>
                 </ul> 
             </div>
-           
         </div>
-        
+        <div id="top2">
+                
+                    
+        </div>
         {{>footer}}
-        <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-        <script src="/scripts/script.js"></script>
-    
+        <!--
+        <div id="nav1">
+            <ul>
+                <li><a href="" > Terms and Conditions </a></li>
+                <li><a href="" > Privacy Policy </a></li>
+                <li><a href="" > Notice to Users </a></li>
+                <li><a href="" > How it works </a></li>
+                <li><a href="" > Blog </a></li>
+                <li><a href="" > Contact Us </a></li>
+            </ul>
+        </div>
+        -->    
      
-     
+             
+        
+        
     </body>
 </html>

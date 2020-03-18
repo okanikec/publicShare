@@ -2,31 +2,41 @@
 
 <html>
     <head>
-        <link href="/css/styles.css" rel="stylesheet">
-        
-
+        <link href="/styles.css" rel="stylesheet">
+        <title> Login HBS </title>
 
     </head>
     <body>
-        <div id="wrapper">
-            {{>loggedheader}}
+    {{>loginheader}}    
         
-            <div id="login">
-                <div id="">
+        <div id="login">
+            <div id="">
                 Username: <input type="text" >
-                </div> 
-                <div id="">         
+            </div> 
+            <div id="">         
                 Password: <input type="text" style="margin-top:30px;">
-                </div>
-                <button type="button" id="bot" style="margin-top:30px;"> login </button>
             </div>
+            <button type="button" id="bot" style="margin-top:30px;"> login </button>
+    
 
         </div>
-        
-        
+        <div id="top2">
+                    
+        </div>
         {{>footer}}
-        
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-    <script src="/scripts/script.js"></script>   
+        <!--
+        <div id="nav1">
+           <ul>
+                <li><a href="" > Terms and Conditions </a></li>
+                <li><a href="" > Privacy Policy </a></li>
+                <li><a href="" > Notice to Users </a></li>
+                <li><a href="" > How it works </a></li>
+                <li><a href="" > Blog </a></li>
+                <li><a href="" > Contact Us </a></li>
+            </ul>
+        </div>
+        -->
+        <script src="../../script.js"></script>
+        <script src="../../app.js"></script> 
     </body>
 </html>

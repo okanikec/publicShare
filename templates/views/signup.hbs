@@ -2,26 +2,21 @@
 
 <html>
     <head>
-        <link href="/css/styles.css" rel="stylesheet">
-        
-
+        <link href="/styles.css" rel="stylesheet">
+        <title> Signup HBS </title>
 
     </head>
     <body>
-        <div id="wrapper">
-            {{>loggedheader}}
-            
-            <div id="signup">
-                <form>
+    {{>loginheader}}
+        
+        <div id="signup">
+            <form id="join" method="POST" action="/members">
                 
                 <label>First Name:</label>
                 <input type="text" name="first" placeholder="First Name"><br />
                 <br/>
                 <label>Last Name: </label>
                 <input type="text" name="last" placeholder="Last Name"><br />
-                <br/>
-                <label> Date of Birth: </label>
-                <input type="date" name="bday"><br/>
                 <br/>
                 <label> Email: </label>
                 <input type="text" name="email" placeholder="Email"><br />
@@ -32,25 +27,32 @@
                 </select>    
                 <br/>
                 <br/>
+                <label> Tel: + </label>
+                <input type="tel" name="tel" placeholder="Phone Number"><br />
+                <br/>
                 <label>Create a username:</label>
-                <input type="text" name="first"><br />
+                <input type="text"><br />
                 <br/>
                 <label>Create a password:</label>
-                <input type="text" name="first"><br />
+                <input type="password"><br />
                 <br/>
                 <label>Re-enter password:</label>
-                <input type="text" name="first"><br />
+                <input type="password"><br />
                 <br/>
-                </form>
-            </div>        
+                <button id="but" type="submit"> sign up </button>
+            </form>
+                    
         
     
-       
+        </div>
+        <div id="top2">
+                    
+        </div>
+        {{>footer}}
         
-            
-          {{>footer}}   
-        </div>  
-        <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-        <script src="/scripts/script.js"></script>
+        
+        
+        <script src="../../script.js"></script>
+        <script src="../../app.js"></script>
     </body>
 </html>

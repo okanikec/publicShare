@@ -1,0 +1,226 @@
+
+
+body{
+    background-color: blue;
+}
+
+a{
+    color:white;
+}
+
+div{
+    border: 2px  white;
+    margin: 0px;
+    text-align:center;
+    width:1000px;
+}
+
+.cell{
+    color:red;
+}
+
+.call{
+    color:yellow;
+}
+
+span>a{
+    color: green;
+}
+
+.table{
+    border: 2px solid white;
+}
+
+#top1{
+    border:2px solid green;
+    height: 100px;
+    width: 100%;
+}
+
+#top2{
+    border:2px solid green;
+    height: 300px;
+    width: 100%;
+}
+
+#login{
+    border: 2px solid white;
+    display:block;
+    padding:50px;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    height:auto;
+    /*width: 700px;*/
+}
+
+#signup{
+    border: 2px solid white;
+    width:450px;
+    margin-top:10px;
+    margin-left:500px;
+    height:auto;
+    text-align:right;
+    
+}    
+
+.name{
+    margin-top:5px;
+    margin-left:250px;
+    background-color:red;
+}
+#btn1{
+    display:inline;
+    border: 1px solid red;
+    margin:3px;
+    
+    margin-left:200px;
+    padding:5px;
+}
+#btn2{
+    border: 1px solid red;
+    margin:3px;
+    margin-left:100px;
+    display:inline;
+    padding:5px;
+}
+
+#nav1{
+    border:1px solid yellow;
+    background-color:darkgreen;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    font: tahoma;
+    width: 100%;
+}
+
+#nav1 ul{
+    padding:0px;
+    margin: 0px;
+    list-style-type:none;
+    text-align: center;
+
+}
+
+#nav1 li{
+    display:inline;
+    padding:15px;
+    vertical-align:middle;
+}
+
+#nav1 a{
+    text-decoration: none;
+}
+
+#nav1 a:hover{
+    color :red;
+}
+
+
+#wrapper{
+    border: 1px solid black;
+    display:inline-block;
+    padding:0px;
+    width:100%;
+   height:auto;
+}
+
+#list1{
+    border: 1px solid red;
+    position: relative;
+    float: left;
+    height:auto;
+    width:337px;
+    
+}
+
+#list2{
+    border: 1px solid white;
+    position:absolute;
+    left:347px;
+    width:337px;
+    height: auto;
+    float:left;
+}
+
+#list3{
+    border: 1px solid white;
+    position:absolute;
+    left:685px;
+    width:337px;
+    height: auto;
+     
+}
+
+#list4{
+    overflow: hidden;
+    border: 1px solid white;
+    position:absolute;
+    left:1022px;
+    width: auto;
+    background-color:red; 
+  
+}
+
+.lista{
+   list-style-position: outside;
+   display:inline-block;
+   text-align: left;
+   margin-right:200px;
+   white-space: nowrap;
+   
+}
+.listb{
+    list-style-position: outside;
+    display:inline-block;
+    text-align: left;
+    margin-right:100px;
+    white-space: nowrap;
+}
+
+.listc{
+    background-color: white;
+    list-style-position: outside;
+    display:inline-block;
+    text-align: left;
+    margin-right:100px;
+    white-space: nowrap;
+}
+.listd{
+    background-color: white;
+    list-style-position: outside;
+    display:inline-block;
+    text-align: left;
+    margin-right:100px;
+    white-space: nowrap;
+}
+
+#split1{
+    border: 2px solid white;
+    float:left;
+    width:544px;
+    padding:50px;
+    margin-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    height:auto;
+    
+}  
+
+#split2{
+    border: 2px solid white;
+    float:right;
+    width:540px;
+    padding:50px;
+    margin-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    height:auto;
+}  
+
+
+.rows{
+    text-align:justify;
+    
+}
