@@ -23,6 +23,7 @@ hbs.registerPartials(partialsPath)
 //setup static directory to serve
 datamart.use(express.static(publicDirectoryPath))
 datamart.use(express.json())
+datamart.use(express.urlencoded({ extended: false}))
 //datamart.use(bodyparser.urlencoded({ extended: false }))
 //datamart.use(bodyparser.json())
 
