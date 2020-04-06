@@ -2,7 +2,8 @@
 
 <html>
     <head>
-        <link href="/styles.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <link href="../styles.css" rel="stylesheet">
         <title> Signup HBS </title>
 
     </head>
@@ -10,36 +11,34 @@
     {{>loginheader}}
         
         <div id="signup">
-            <form id="join" method="POST" action="/members">
+            <form  method="POST" action="/members">
                 
                 <label>First Name:</label>
-                <input type="text" name="first" placeholder="First Name"><br />
+                <input type="text" name="firstname" placeholder="First Name" value="Jane"><br />
                 <br/>
                 <label>Last Name: </label>
-                <input type="text" name="last" placeholder="Last Name"><br />
+                <input type="text" name="lastname" placeholder="Last Name" value="Doe"><br />
                 <br/>
                 <label> Email: </label>
-                <input type="text" name="email" placeholder="Email"><br />
+                <input type="text" name="email" placeholder="Email" value="janedoe@mail.com"><br />
                 <br/>
                 <label> Country: </label>
-                <select id="kuntry" style="margin-right:0px; width:350px;">
-                    <option value="--Select a Country--">--Select a Country--</option>
+                <select id="kuntry" style="margin-right:0px; width:350px;" name="country">
+                    <option value="--Select a Country--"> --Select a Country-- </option>
                 </select>    
                 <br/>
                 <br/>
                 <label> Tel: + </label>
-                <input type="tel" name="tel" placeholder="Phone Number"><br />
-                <br/>
+                <input type="tel" name="phone" placeholder="Phone Number" value=""><br />
+                <br/> 
                 <label>Create a username:</label>
-                <input type="text"><br />
+                <input type="text" name="username" value="janedoe"><br />
                 <br/>
                 <label>Create a password:</label>
-                <input type="password"><br />
+                <input type="password" name="password"><br />
                 <br/>
-                <label>Re-enter password:</label>
-                <input type="password"><br />
                 <br/>
-                <button id="but" type="submit"> sign up </button>
+                <button id="but" type="submit" value="submit"> Sign up</button>
             </form>
                     
         
@@ -52,7 +51,8 @@
         
         
         
-        <script src="../../script.js"></script>
         <script src="../../app.js"></script>
+        <script src="../../script.js"></script>
+        
     </body>
 </html>

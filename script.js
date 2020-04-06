@@ -1,5 +1,6 @@
 
 
+
 const countryRequest = new XMLHttpRequest()
 
 countryRequest.addEventListener('readystatechange',(e) => {
@@ -21,11 +22,9 @@ countryRequest.addEventListener('readystatechange',(e) => {
 countryRequest.open('GET','http://restcountries.eu/rest/v2/all')
 countryRequest.send()
 
-
-
-
-
-document.querySelector('#join').addEventListener('submit', function (e) {
-    e.target.textContent = 'You clicked me!'
-    //console.log("help!")
+const Country = document.querySelector('#kuntry').addEventListener('change', function (e) {
+    console.log(e.target.value)
 })
+
+
+document.querySelector('#zuzi').innerHTML = ''

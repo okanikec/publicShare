@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="/styles.css" rel="stylesheet">
-        <title> Postajob HBS</title>
+        <link href="./styles.css" rel="stylesheet">
+        <title> Members Page HBS</title>
 
     </head>
     <body>
@@ -14,13 +14,12 @@
 
         </div>
         <div id="top2">
-            
-            <div id="split1">
-                
-            </div>
-            <div id="split2">
 
-            </div>
+            <form method="GET" action="/memberspage">
+                <p><button id="but" type="submit" value="submit"> Get Members </button></p>
+            </form>
+            
+           <p><div id="zuzi">{{ title }}</div></p>
                     
         </div>
         {{>footer}}

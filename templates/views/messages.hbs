@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="../styles.css" rel="stylesheet">
+        <title> Messages HBS</title>
+
+    </head>
+    <body>
+        {{>loginheader}}
+        
+        <div id="headpost">
+
+        </div>
+        <div id="top2">
+           <p> <form id="yans">
+                    <input type="text" name="info" placeholder="message">
+                    <p><button> send </button></p> 
+                </form>
+            </p> </p>
+            
+               
+        </div>
+        {{>footer}}
+        
+        <!--
+        <script src="../../app.js"></script> 
+        <script src="../../script.js"></script>
+        -->
+        <script src="../../socket.io/socket.io.js"></script>
+        <script src="../../chat.js"></script>
+
+    </body>
+</html>
+

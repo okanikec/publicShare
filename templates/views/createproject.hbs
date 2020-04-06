@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="../styles.css" rel="stylesheet">
+        <title> Create a Project HBS</title>
+
+    </head>
+    <body>
+        {{>loginheader}}
+        
+        <div id="headpost">
+
+        </div>
+        <div id="top2">
+
+            <form  method="POST" action="/createaproject">
+                <p>
+                <label>Enter Project Description:</label>
+                <input type="text">
+                </p>
+                <p>
+                <label>Enter Project Due date </label>
+                <input type="text">
+                </p>
+                <p>
+                <label> Enter Project Due Date: </label>
+                <input id ="date" type="date" name="projectduedate" value="2017-06-01">
+                </p>
+                <p>
+                <label> Enter fixed project budget: </label>
+                <span class="usd"> 
+                   <i>$</i> <input type="number">
+                </span>
+                </p> 
+                <p><button id="submitcreation" type="submit" value="submit"> Create Project </button></p>
+            </form>
+               
+        </div>
+        {{>footer}}
+        
+        
+         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+        <script src="../../dateSelector.js"></script>
+        <!--
+        <script src="../../app.js"></script>
+        <script src="../../script.js"></script>
+        <script src="../../socket.io/socket.io.js"></script>
+        <script src="../../chat.js"></script>
+        -->
+
+    </body>
+</html>

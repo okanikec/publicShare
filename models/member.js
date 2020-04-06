@@ -5,18 +5,18 @@ const Member = mongoose.model('Member', {
     firstname: {
         type: String,
         //default: "Jane",
-        required: true,
+        //required: true,
         trim: true
     },
     lastname: {
         type: String,
         //default: "Doe",
-        required: true,
+        //required: true,
         trim: true
     },
     email: {
         type: String,
-        required: true,
+        //required: true,
         //default: "jane.doe@mail.com",
         validate(value){
             if (!validator.isEmail(value)) {
@@ -27,17 +27,17 @@ const Member = mongoose.model('Member', {
     country:{
         type: String,
         //default: "France",
-        required: true
+        //required: true
     },
     phone: {
         type: Number,
-        required: true,
+        //required: true,
         default: 0000000000
     },
     username:{
         type: String,
         //default: "janedoe",
-        required: true,
+        //required: true,
         trim: true
     },
     password: {
@@ -45,12 +45,12 @@ const Member = mongoose.model('Member', {
         minlength: 7,
         //default: "secretthree",
         trim: true,
-        required: true,
+        //required: true,
         validate(value) {
-            if ( value.toLowerCase().includes('password')) {
-                throw new Error(' Password cannot contain "password" ')
-            }
-        }
+             if ( value.toLowerCase().includes('password')) {
+                 throw new Error(' Password cannot contain "password" ')
+             }
+         }
     }
 
 })
