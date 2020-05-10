@@ -8,30 +8,26 @@
 
     </head>
     <body>
-        {{>loginheader}}
+        {{>logoutheader}}
         
         <div id="headpost">
 
         </div>
         <div id="top2">
 
-            <form  method="POST" action="/createaproject">
+            <form  method="POST" action="/projects">
                 <p>
                 <label>Enter Project Description:</label>
-                <input type="text">
-                </p>
-                <p>
-                <label>Enter Project Due date </label>
-                <input type="text">
+                <input type="text" name="projectdescription">
                 </p>
                 <p>
                 <label> Enter Project Due Date: </label>
-                <input id ="date" type="date" name="projectduedate" value="2017-06-01">
+                <input id ="date" type="date" name="projectdue">
                 </p>
                 <p>
                 <label> Enter fixed project budget: </label>
                 <span class="usd"> 
-                   <i>$</i> <input type="number">
+                   <i>$</i> <input type="number" name="projectcost">
                 </span>
                 </p> 
                 <p><button id="submitcreation" type="submit" value="submit"> Create Project </button></p>
@@ -44,12 +40,9 @@
          
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
         <script src="../../dateSelector.js"></script>
-        <!--
-        <script src="../../app.js"></script>
-        <script src="../../script.js"></script>
-        <script src="../../socket.io/socket.io.js"></script>
-        <script src="../../chat.js"></script>
-        -->
+        <script src="../../server.js"></script>
+        <script src="../../script.js"></script>   
+       
 
     </body>
 </html>

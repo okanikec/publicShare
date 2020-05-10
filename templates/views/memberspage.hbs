@@ -5,27 +5,30 @@
         <meta charset="UTF-8">
         <link href="./styles.css" rel="stylesheet">
         <title> Members Page HBS</title>
-
     </head>
     <body>
-        {{>loginheader}}
+
+        {{>logoutheader}}
         
         <div id="headpost">
 
         </div>
         <div id="top2">
 
-            <form method="GET" action="/memberspage">
-                <p><button id="but" type="submit" value="submit"> Get Members </button></p>
+            
+
+            <form action="/memberspage">
+             <!--  <p><button id="" type="submit" > Get Members </button></p>
+                <p><button id="clear-data" type="submit" value=""> clear </button></p> -->
+                
             </form>
             
-           <p><div id="zuzi">{{ title }}</div></p>
+           <p><div id="zuzi"> {{title}} </div></p>
                     
         </div>
         {{>footer}}
         
-        
-        <script src="../../app.js"></script> 
+        <script src="../../server.js"></script> 
         <script src="../../script.js"></script>
         
     </body>

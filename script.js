@@ -1,4 +1,8 @@
 
+//console.log(document.querySelector('#zuzi'))
+
+//document.querySelector('#zuzi').innerHTML = ''
+
 
 
 const countryRequest = new XMLHttpRequest()
@@ -19,6 +23,7 @@ countryRequest.addEventListener('readystatechange',(e) => {
     }
 })
 
+
 countryRequest.open('GET','http://restcountries.eu/rest/v2/all')
 countryRequest.send()
 
@@ -26,5 +31,12 @@ const Country = document.querySelector('#kuntry').addEventListener('change', fun
     console.log(e.target.value)
 })
 
+document.querySelector('#clear-data').addEventListener('click', function (e) {
+    document.querySelector('#zuzi').innerHTML = '<p> TEST </p>'
+})
 
-document.querySelector('#zuzi').innerHTML = ''
+//document.querySelector('#zuzi').innerHTML = ''
+
+//console.log(document.querySelector('#zuzi'))
+
+

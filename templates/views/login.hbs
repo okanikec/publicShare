@@ -11,14 +11,15 @@
     {{>loginheader}}    
         
         <div id="login">
-            <div id="">
-                Username: <input type="text" >
-            </div> 
-            <div id="">         
-                Password: <input type="text" style="margin-top:30px;">
-            </div>
-            <button type="button" id="bot" style="margin-top:30px;"> login </button>
-    
+            <form method="POST" action="/login">
+                <div id="">
+                    email: <input type="email" name="email">
+                </div> 
+                <div id="">         
+                    Password: <input type="password" name="password" style="margin-top:30px;">
+                </div>
+                <button type="submit" id="bot" style="margin-top:30px;"> login </button>
+            </form>
 
         </div>
         <div id="top2">
@@ -37,7 +38,7 @@
             </ul>
         </div>
         -->
-        <script src="../../app.js"></script> 
+        <script src="../../server.js"></script> 
         <script src="../../script.js"></script>
         
     </body>
