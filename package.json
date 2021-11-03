@@ -14,7 +14,7 @@
     "mongoose": "^5.9.4",
     "request": "^2.88.2",
     "socket.io": "^2.3.0",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
